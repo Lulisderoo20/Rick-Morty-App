@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './Form.module.css';
+import validation from './validation'
 
-export default function Form() {
+export default function Form({login}) {
     const [userData, setUserData] = React.useState({
         email:'',
         password: '',
@@ -11,8 +12,11 @@ export default function Form() {
 
     const handleChange=(e) =>{ setUserData({
         ...userData, [e.target.name]: e.target.value
-    
-    })}
+    })
+
+    setErrors(validation({
+        ...userData, [e.target.name]: e.target.value
+    }))}
 
     const handleKeyDown=()=>{
         
@@ -20,9 +24,11 @@ export default function Form() {
 
     const handleSubmit=(e)=>{
 e.preventDefault();
-setUserData({email:'', password:''
-    }) ;
-    return alert("LOGUEADO")}
+// setUserData({email:'', password:''
+//     }) ;
+//     return alert("LOGUEADO")}
+login(userData)    
+}
 
   return (
     <div><form onSubmit={handleSubmit} className={style.form} action="">

@@ -37,8 +37,7 @@ import {useState, useEffect} from "react";
       <button onClick={handleFavorite}>❤️</button>
    ) : (
       <button onClick={handleFavorite}>🤍</button>
-   )
-}
+   )}
       <button
         className="close-btn"
         onClick={() => onClose(id)}
@@ -48,10 +47,7 @@ import {useState, useEffect} from "react";
           boxShadow: "10px",
           borderRadius: "50%",
         }}
-      >
-        X
-      </button>
-      
+      >X</button>
       <Link to={`/detail/${id}`}>
         <h2 className="animate__animated animate__tada">{name}</h2>
       </Link>

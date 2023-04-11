@@ -11,7 +11,7 @@ export default function Detail( ) {
         if (data.name) {
           setCharacter(data);
         } else {
-          window.alert("No hay personajes con ese ID");
+          alert("No hay personajes con ese ID");
         }
       }
     );
