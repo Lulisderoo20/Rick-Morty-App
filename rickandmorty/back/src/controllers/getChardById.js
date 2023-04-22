@@ -34,7 +34,7 @@ const success = (response, res) => {
 };
 
 const error=(erra, resa)=>{
-  resa.status(500).json(erra.message);
+  resa.status(500).json({message: "Not Found"});
 }
 
 const getChardById = (req, res) => {
@@ -42,8 +42,8 @@ const getChardById = (req, res) => {
   const {id}= req.params;
 
   axios
-    .get(`${URL}/${id}?key=${KEY}`)
-    
+    .get(`${URL}/${id}`)
+    // .get(`${URL}/${id}?key=${KEY}`)
     .then((response) => success(response, res))
     .catch((err) =>error(err, res) );
 };
